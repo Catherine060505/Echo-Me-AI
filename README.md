@@ -54,3 +54,13 @@ Creative storytelling assistants
 
 ## Preview: 
 file */attached_assets/echome_1752326197752.html*
+
+## 🔐 API Key Setup
+
+This project uses the Google Cloud API (e.g., Text-to-Speech, Speech-to-Text). To use it:
+
+1. Go to [Google AI Studio](https://aistudio.google.com/welcome)
+2. Create an account (if have not)
+3. Go to API Key
+4. Create API Key
+5. Create a `.env` file in the root folder and add: ITE_GOOGLE_API_KEY=your_google_api_key_here
