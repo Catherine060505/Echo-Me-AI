@@ -1,5 +1,5 @@
 # Echo Me AI 🎤🤖
-### Echo Me AI is an interactive, real-time AI entertainment assistant built with a modern web tech stack. It allows users to communicate with an AI assistant using natural language via a sleek frontend interface. The project showcases integration of AI technologies in a conversational UI using Vite, TypeScript, TailwindCSS, and Replit hosting.
+### EchoMe is a modern full-stack application that transforms user thoughts into various forms of entertainment content using AI. The platform allows users to input any thought and receive AI-generated content in multiple formats including movies, songs, haikus, roasts, and jokes, complete with visual imagery.
 
 ## 🚀 Features
 🎙️ Real-time user interaction
