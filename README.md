@@ -1,64 +1,108 @@
 # Echo Me AI 🎤🤖
-### EchoMe is a modern full-stack application that transforms user thoughts into various forms of entertainment content using AI. The platform allows users to input any thought and receive AI-generated content in multiple formats including movies, songs, haikus, roasts, and jokes, complete with visual imagery.
+
+## Overview
+
+EchoMe is a modern full-stack application that transforms user thoughts into various forms of entertainment content using AI. The platform allows users to input any thought and receive AI-generated content in multiple formats including movies, songs, haikus, roasts, and jokes, complete with visual imagery.
 
 ## User Preferences
+
 Preferred communication style: Simple, everyday language.
 
-## 🚀 Features
-🎙️ Real-time user interaction
+## System Architecture
 
-💬 AI-powered response generation
+The application follows a monorepo structure with a clear separation between client and server components:
 
-🎨 Beautifully styled with TailwindCSS
+### Frontend Architecture
+- **Framework**: React 18 with TypeScript
+- **Build Tool**: Vite for fast development and optimized builds
+- **Styling**: Tailwind CSS with shadcn/ui component library
+- **State Management**: TanStack Query for server state management
+- **Routing**: Wouter for lightweight client-side routing
+- **UI Components**: Radix UI primitives with custom styling
 
-⚡️ Fast development powered by Vite
+### Backend Architecture
+- **Runtime**: Node.js with Express.js server
+- **Language**: TypeScript with ES modules
+- **Database**: PostgreSQL with Drizzle ORM
+- **Database Provider**: Neon serverless database
+- **AI Integration**: OpenAI API for content and image generation
+- **Session Management**: PostgreSQL-based session storage
 
-🛠️ Modular and scalable project structure
+## Key Components
 
-## 🛠 Tech Stack
-Frontend: Vite + TypeScript + TailwindCSS
+### Client-Side Components
+- **Main App**: Single-page application with routing
+- **Home Page**: Primary interface for user input and content generation
+- **UI Components**: Comprehensive shadcn/ui component library
+- **Hooks**: Custom hooks for mobile detection and toast notifications
+- **Query Client**: Centralized API communication with error handling
 
-Build Tools: Vite
+### Server-Side Components
+- **Express Server**: RESTful API with middleware for logging and error handling
+- **Gemini Service**: Abstraction layer for AI content and image generation
+- **Storage Layer**: Database abstraction with in-memory fallback
+- **Route Handlers**: API endpoints for AI content generation
 
-Hosting: Replit
+### Shared Components
+- **Types**: TypeScript interfaces for API contracts
+- **Schema**: Database schema definitions with Drizzle ORM
+- **Validation**: Zod-based data validation
 
-Configuration: Drizzle ORM (configured)
+## Data Flow
 
-## 📦 Getting Started
-### 1. Clone the repository
-git clone https://github.com/your-username/echo-me-ai.git
-cd echo-me-ai
+1. **User Input**: User enters thoughts and selects entertainment mode
+2. **API Request**: Frontend sends POST request to `/api/echome` endpoint
+3. **AI Processing**: Server processes request through Gemini service
+4. **Content Generation**: AI generates both text content and visual imagery
+5. **Response**: Server returns structured response with generated content
+6. **Display**: Frontend renders the generated content with loading states
 
-### 2. Install dependencies
-npm install
+## External Dependencies
 
-### 3. Run locally
-npm run dev
+### AI Services
+- **Google Gemini 2.5 Flash**: Primary model for text content generation
+- **Gemini Vision**: AI image generation for visual content
+- **Structured Output**: JSON-formatted responses for consistent data structure
 
-*The app will be live at http://localhost:3000*
+### Database
+- **Neon PostgreSQL**: Serverless PostgreSQL database
+- **Drizzle ORM**: Type-safe database queries and migrations
+- **Connection Pooling**: Efficient database connection management
 
-## 🧪 Run on Replit
-You can run this project instantly in Replit:
+### UI/UX Libraries
+- **Radix UI**: Accessible UI primitives
+- **Tailwind CSS**: Utility-first CSS framework
+- **shadcn/ui**: Pre-built component library
+- **Lucide React**: Icon library
 
-Import the repository into Replit
+## Deployment Strategy
 
-Ensure .replit and replit.nix are set up (as they are in this repo)
+### Development Environment
+- **Hot Reload**: Vite development server with HMR
+- **TypeScript**: Strict type checking across the stack
+- **ESLint/Prettier**: Code quality and formatting tools
 
-Click "Run"
+### Production Build
+- **Client Build**: Vite optimized production build
+- **Server Build**: esbuild for Node.js bundling
+- **Static Assets**: Served from dist/public directory
 
-## 🧠 About the Project
-This project was developed to explore how conversational AI can enhance user interaction and entertainment. The assistant interface is suitable for extensions like:
+### Environment Configuration
+- **Database**: PostgreSQL connection via DATABASE_URL
+- **AI Services**: Google Gemini API key configuration
+- **Session Management**: PostgreSQL session storage
 
-Entertainment bots
+### Key Architectural Decisions
 
-Accessibility tools
+1. **Monorepo Structure**: Keeps client, server, and shared code in single repository for easier development and deployment
+2. **TypeScript Throughout**: Ensures type safety across the entire stack
+3. **Drizzle ORM**: Provides type-safe database operations with PostgreSQL
+4. **OpenAI Integration**: Leverages latest GPT-4o model for high-quality content generation
+5. **Component Library**: Uses shadcn/ui for consistent, accessible UI components
+6. **Serverless Database**: Neon PostgreSQL for scalable, managed database solution
+7. **Structured AI Responses**: JSON-formatted AI outputs for consistent frontend rendering
 
-Creative storytelling assistants
-
-## Preview: 
-file */attached_assets/echome_1752326197752.html*
-
-## 🔐 API Key Setup
+### 🔐 API Key Setup
 
 This project uses the Google Cloud API (e.g., Text-to-Speech, Speech-to-Text). To use it:
 
