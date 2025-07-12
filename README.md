@@ -1,6 +1,9 @@
 # Echo Me AI 🎤🤖
 ### EchoMe is a modern full-stack application that transforms user thoughts into various forms of entertainment content using AI. The platform allows users to input any thought and receive AI-generated content in multiple formats including movies, songs, haikus, roasts, and jokes, complete with visual imagery.
 
+## User Preferences
+Preferred communication style: Simple, everyday language.
+
 ## 🚀 Features
 🎙️ Real-time user interaction
 
